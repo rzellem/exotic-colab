@@ -45,11 +45,6 @@ for p in path_update:
     if p not in sys.path:
         sys.path.append(p)
 
-try:  # module import
-    from .api.versioning import version_read
-except ImportError:  # package import
-    from api.versioning import version_read
-
 ignore = True
 
 try:
