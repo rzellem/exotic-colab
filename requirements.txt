@@ -1,0 +1,5 @@
+# pipreqs /path/to/your/project/
+wheel
+setuptools
+importlib-metadata>=3.6 ; python_version<='3.7'
+python_version
