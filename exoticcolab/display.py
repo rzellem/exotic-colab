@@ -15,7 +15,7 @@ def setupDisplay():
   webUrl  = urllib.request.urlopen(custom_html_url)
 
   #get the result code and print it
-  display("result code: " + str(webUrl.getcode()))
+  #display("result code: " + str(webUrl.getcode()))
 
   # read the data from the URL and print it
   exotic_html = webUrl.read().decode('utf-8')
