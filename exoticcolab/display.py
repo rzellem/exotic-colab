@@ -27,7 +27,8 @@ def testImplementation():
 def displayStep(message):
   #display('in displayStep')
   js_code = '''\
-                var container = document.querySelector("#output-body ul.step_container");\
+                var container_nodes = document.querySelectorAll("#output-body ul.step_container");\
+                var container = container_nodes[container_nodes.length-1];\
                 container.innerHTML += '<li class="step1">{m}</li>';
                 '''.format(m=message)
   display(Javascript(js_code))
