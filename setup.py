@@ -25,8 +25,8 @@ import setuptools
 # Package meta-data sane defaults
 AUTHOR = "Exoplanet Watch at NASA JPL"
 AUTHOR_EMAIL = "exoplanetwatch@jpl.nasa.gov"
-DESCRIPTION = "EXOTIC: EXOplanet Transit Interpretation Code - For Colab"
-NAME = "exotic"
+DESCRIPTION = "EXOTIC: EXOplanet Transit Interpretation Code - Google Colab Styles"
+NAME = "exoticcolab"
 PYTHON_REQUIREMENTS = "3.6"
 URL = "https://github.com/alienlifeform/exotic-colab"
 
@@ -66,7 +66,7 @@ def requirements_read():
 
 setuptools.setup(name=NAME,
                  use_scm_version={
-                     'write_to': 'exotic/version.py',
+                     'write_to': 'version.py',
                      'write_to_template': '__version__ = "{version}"'
                  },
                  description=DESCRIPTION,
@@ -106,8 +106,6 @@ setuptools.setup(name=NAME,
                  setup_requires=REQUIREMENTS_SETUP,
                  entry_points={
                      'console_scripts': [
-                         'exotic = exotic.exotic:main',
-                         'exotic-gui = exotic.exotic_gui:main',
                      ],
                  }
                  )
