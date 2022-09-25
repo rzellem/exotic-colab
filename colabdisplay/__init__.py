@@ -32,7 +32,7 @@
 #    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # ########################################################################### #
-#    EXOplanet Transit Interpretation Code (EXOTIC)
+#    EXOTIC COLAB: EXOplanet Transit Interpretation Code (EXOTIC) for Google Colab
 #    # NOTE: See companion file version.py for version info.
 # ########################################################################### #
 import importlib_metadata as metadata
@@ -55,11 +55,5 @@ ignore = True
 try:
     __version__ = metadata.version(__name__)
 except metadata.PackageNotFoundError:
-    # package is not installed, try reading from exotic script
-    try:
-        __version__ = version_read("exotic.py")
-    except IOError:
-        # unable to read from exotic script
-        __version__ = "unknown"
-        pass
+    __version__ = "unknown"
     pass

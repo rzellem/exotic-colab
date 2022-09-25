@@ -1,20 +1,20 @@
 #! /usr/bin/env python3
 # python3 setup.py --version
 # FOR RELEASE:
-# (1) manually update exotic/version.py
-# git add exotic/version.py && git commit -m "#<ticket>:Updated version for release" && git push
+# (1) manually update colabdisplay/version.py
+# git add colabdisplay/version.py && git commit -m "#<ticket>:Updated version for release" && git push
 # (2) tag using web ui on github master branch 
 # (3) build and package
-# git checkout exotic/version.py && python3 setup.py sdist --format=gztar,zip bdist_wheel --universal  # build
+# git checkout colabdisplay/version.py && python3 setup.py sdist --format=gztar,zip bdist_wheel --universal  # build
 # (3) release
 # pip3 install twine  # https://twine.readthedocs.io/en/latest/
 # twine check dist/* && twine upload dist/*  # upload
 # FOR LOCAL TESTING:
 # python3 setup.py sdist --format=gztar,zip bdist_wheel --universal  # build
 # pip3 install --exists-action w --progress-bar ascii -r requirements.txt  # install req's
-# pip3 install exotic --no-index --find-links file:///proj/survey-ws/source/EXOTIC/dist/  # install locally
+# pip3 install exoticcolab --no-index --find-links file:///proj/survey-ws/source/exoticcolab/dist/  # install locally
 # CLEAN PREVIOUS BUILDS: 
-# rm -r dist *.egg* build ; pip3 uninstall exotic ; # pipenv uninstall exotic
+# rm -r dist *.egg* build ; pip3 uninstall exoticcolab ; # pipenv uninstall exoticcolab
 
 import re
 import time
@@ -25,10 +25,10 @@ import setuptools
 # Package meta-data sane defaults
 AUTHOR = "Exoplanet Watch at NASA JPL"
 AUTHOR_EMAIL = "exoplanetwatch@jpl.nasa.gov"
-DESCRIPTION = "EXOTIC: EXOplanet Transit Interpretation Code - Google Colab Styles"
+DESCRIPTION = "EXOTIC DISPLAY: Google Colab Display package for EXOTIC - EXOplanet Transit Interpretation Code"
 NAME = "exoticcolab"
 PYTHON_REQUIREMENTS = "3.6"
-URL = "https://github.com/alienlifeform/exotic-colab"
+URL = "https://github.com/alienlifeform/exoticcolab"
 
 REQUIREMENTS_SETUP = ["setuptools_scm"]
 
@@ -92,10 +92,10 @@ setuptools.setup(name=NAME,
                  ],
                  keywords='nasa jpl exoplanet transit citizen science astronomy bayesian nested-sampler',
                  project_urls={
-                    "Documentation": "https://github.com/rzellem/EXOTIC/wiki",
+                    "Documentation": "https://github.com/alienlifeform/exoticcolab/wiki",
                     "Site": "https://exoplanets.nasa.gov/exoplanet-watch",
-                    "Source": "https://github.com/rzellem/EXOTIC",
-                    "Tracker": "https://github.com/rzellem/EXOTIC/issues"
+                    "Source": "https://github.com/rzellem/exoticcolab",
+                    "Tracker": "https://github.com/rzellem/exoticcolab/issues"
                  },
                  #  https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files
                  packages=setuptools.find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
