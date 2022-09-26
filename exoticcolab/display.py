@@ -52,6 +52,10 @@ def appendToContainer(container_selector, html_chunk):
                 '''.format(c=container_selector, m=html_chunk)
   display(Javascript(js_code))
 
+def appendStepToContainer(container_selector, html_chunk):
+  appendToContainer(container_selector, '<li class="step">' + html_chunk + '</li>')
+
+
 ######################################################
   
 def expandableSection(content):
