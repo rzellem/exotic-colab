@@ -10,6 +10,8 @@ def importCustomStyles():
   display(HTML('<link rel="stylesheet" href="' + custom_stylesheet_url + '">'))
 
 def setupDisplay():
+  importCustomStyles()
+  
   # open a connection to a URL using urllib
   custom_html_url = 'https://exoplanets.nasa.gov/system/exotic/colab.html?i=' + str(random.random())
   webUrl  = urllib.request.urlopen(custom_html_url)
