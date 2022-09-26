@@ -33,11 +33,10 @@ def downloadButton(text,download_target,filename):
   display(HTML('<a class="big_button" href="' + download_target + '" href="' + filename + '">' + text + '</a>'))
 
 def appendToContainer(container_selector, html_chunky):
-  html_chunkles = html_chunky
   js_code = '''\
                 var container = document.querySelector("#output-body {c}");\
                 container.innerHTML += '{m}';
-                '''.format(c=container_selector, m=html_chunkles)
+                '''.format(c=container_selector, m=html_chunky)
   display(Javascript(js_code))
   
 def expandableSection(content):
