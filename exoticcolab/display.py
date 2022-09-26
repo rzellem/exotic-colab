@@ -32,11 +32,11 @@ def makeContainer(container_class):
 def downloadButton(text,download_target,filename):
   display(HTML('<a class="big_button" href="' + download_target + '" href="' + filename + '">' + text + '</a>'))
 
-def appendToContainer(container_selector, html_chunky):
+def appendToContainer(container_selector, html_chunk):
   js_code = '''\
                 var container = document.querySelector("#output-body {c}");\
                 container.innerHTML += '{m}';
-                '''.format(c=container_selector, m=html_chunky)
+                '''.format(c=container_selector, m=html_chunk)
   display(Javascript(js_code))
   
 def expandableSection(content):
