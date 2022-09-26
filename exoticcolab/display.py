@@ -1,5 +1,4 @@
 from IPython.display import display, HTML, Javascript
-import urllib.request
 import random
 import time
 import progressbar
@@ -8,20 +7,15 @@ import progressbar
 def importCustomStyles():
   custom_stylesheet_url = 'https://exoplanets.nasa.gov/system/exotic/colab.css?i=' + str(random.random())
   display(HTML('<link rel="stylesheet" href="' + custom_stylesheet_url + '">'))
+  #display(HTML('Getting stylesheet from ' + custom_stylesheet_url))
+
+def importCustomJS():
+  custom_js_url = 'https://exoplanets.nasa.gov/system/exotic/colab.js?i=' + str(random.random())
+  display(HTML('<script type="text/javascript" src="' + custom_js_url + '">'))
 
 def setupDisplay():
   importCustomStyles()
-  
-  # open a connection to a URL using urllib
-  custom_html_url = 'https://exoplanets.nasa.gov/system/exotic/colab.html?i=' + str(random.random())
-  webUrl  = urllib.request.urlopen(custom_html_url)
-
-  #get the result code and print it
-  #display("result code: " + str(webUrl.getcode()))
-
-  # read the data from the URL and print it
-  exotic_html = webUrl.read().decode('utf-8')
-  display(HTML(exotic_html))
+  importCustomJS()
 
 def testImplementation(): 
   display(HTML('<p>CODE IMPLEMENTED SUCCESSFULLY</p>'))
