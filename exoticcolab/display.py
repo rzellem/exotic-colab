@@ -7,7 +7,6 @@ import progressbar
 def importCustomStyles():
   custom_stylesheet_url = 'https://exoplanets.nasa.gov/system/exotic/colab.css?i=' + str(random.random())
   display(HTML('<link rel="stylesheet" href="' + custom_stylesheet_url + '">'))
-  #display(HTML('Getting stylesheet from ' + custom_stylesheet_url))
 
 def importCustomJS():
   custom_js_url = 'https://exoplanets.nasa.gov/system/exotic/colab.js?i=' + str(random.random())
@@ -21,22 +20,24 @@ def testImplementation():
   display(HTML('<p>CODE IMPLEMENTED SUCCESSFULLY</p>'))
 
 def displayStep(message):
-  #display('in displayStep')
   js_code = '''\
                 var container = document.querySelector("#output-body ul.step_container");\
-                container.innerHTML += '<li class="step">{m}</li>';
+                container.innerHTML += '<li class="step1">{m}</li>';
                 '''.format(m=message)
   display(Javascript(js_code))
 
 def makeContainer(container_class):
   display(HTML('<div class="' + container_class + '"></div>'))
 
-def appendToContainer(container_class, html_chunk):
-  #display(HTML('<p>appendingToContainer</p>'))
+def downloadButton(text,download_target,filename):
+  display(HTML('<a class="big_button" href="' + download_target + '" href="' + filename + '">' + text + '</a>'))
+
+def appendToContainer(container_selector, html_chunky):
+  html_chunkles = html_chunky
   js_code = '''\
-                var container = document.querySelector("#output-body .{c}");\
-                container.innerHTML += '{html_chunk}';
-                '''.format(c=container_class, m=html_chunk)
+                var container = document.querySelector("#output-body {c}");\
+                container.innerHTML += '{m}';
+                '''.format(c=container_selector, m=html_chunkles)
   display(Javascript(js_code))
   
 def expandableSection(content):
@@ -49,6 +50,12 @@ def expandableSection(content):
     </div>
     '''.format(expand_content=content)
   display(HTML(html_content))
+
+def hideWarning():
+  js_code = '''\
+                document.querySelector('#output-body .step1').parentElement.parentElement.nextElementSibling.style.display = "none"
+                '''
+  display(Javascript(js_code))
 
 
 # Creates a progress bar that just runs for `seconds` number of seconds
