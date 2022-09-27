@@ -71,7 +71,7 @@ def expandableSection(content):
 
 def hideWarning():
   js_code = '''\
-                document.querySelector('#output-body .step1').parentElement.parentElement.nextElementSibling.style.display = "none"
+                document.querySelector('#output-body .step').parentElement.parentElement.nextElementSibling.style.display = "none"
                 '''
   display(Javascript(js_code))
 
