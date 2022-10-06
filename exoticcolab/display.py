@@ -57,8 +57,17 @@ def appendStepToContainer(container_selector, html_chunk):
 
 
 ######################################################
+
+# TOOLTIPS (not a function, but available in code)
   
+  # Usage:
+  #  appendToContainer('.step1','<li class="step">(2/5) EXOTIC <span class="comment has_tooltip">INFO</span></li>')
+  #  appendToContainer('.comment','<div class="tooltip" style="display: none">(This will take up to a minute, please wait... and ignore any warning that may ask you to "RESTART RUNTIME")</div>')
+
 def expandableSection(content):
+  # Usage:
+  #  expandableSection('<p>This is some expandable stuff</p>')
+
   html_content = '''\
     <div class="expandable" onclick="show_or_hide(this)">
       <div class="expand_text">+ MORE</div>
