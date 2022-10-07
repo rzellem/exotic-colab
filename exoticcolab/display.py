@@ -65,17 +65,20 @@ def appendStepToContainer(container_selector, html_chunk):
   #  appendToContainer('.comment','<div class="tooltip" style="display: none">(This will take up to a minute, please wait... and ignore any warning that may ask you to "RESTART RUNTIME")</div>')
 
 def expandableSection(content):
+  expandableSectionCustom('+ MORE', '+ LESS', content)
+
+def expandableSectionCustom(more, less, content)
   # Usage:
   #  expandableSection('<p>This is some expandable stuff</p>')
 
   html_content = '''\
-    <div class="expandable" onclick="show_or_hide(this)">
-      <div class="expand_text">+ MORE</div>
+    <div class="expandable" onclick="show_or_hide_custom(expand_more, expand_less, this)">
+      <div class="expand_text">{more}</div>
       <div class="hidden">
         {expand_content}
       </div>
     </div>
-    '''.format(expand_content=content)
+    '''.format(expand_content=content,expand_more=more,expand_less=less)
   display(HTML(html_content))
 
 def hideWarning():
