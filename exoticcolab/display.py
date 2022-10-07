@@ -69,18 +69,18 @@ def expandableSection(content):
   #  expandableSection('<p>This is some expandable stuff</p>')
   expandableSectionCustom('+ MORE', '+ LESS', content)
 
-def expandableSectionCustom(more, less, content):
+def expandableSectionCustom(more_text, less_text, content):
   # Usage:
   #  expandableSectionCustom('+ MORE', '- LESS', '<p>This is some expandable stuff</p>')
 
   html_content = '''\
-    <div class="expandable" onclick="show_or_hide(expand_more, expand_less, this)">
+    <div class="expandable" onclick="show_or_hide('{expand_more}', '{expand_less}', this)">
       <div class="expand_text">{more}</div>
       <div class="hidden">
         {expand_content}
       </div>
     </div>
-    '''.format(expand_content=content,expand_more=more,expand_less=less)
+    '''.format(expand_content=content,expand_more=more_text,expand_less=less_text)
   display(HTML(html_content))
 
 def hideWarning():
