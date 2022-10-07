@@ -69,7 +69,7 @@ def expandableSection(content):
   #  expandableSection('<p>This is some expandable stuff</p>')
   expandableSectionCustom('+ MORE', '+ LESS', content)
 
-def expandableSectionCustom(more, less, content)
+def expandableSectionCustom(more, less, content):
   # Usage:
   #  expandableSectionCustom('+ MORE', '- LESS', '<p>This is some expandable stuff</p>')
 
