@@ -74,8 +74,8 @@ def expandableSectionCustom(more_text, less_text, content):
   #  expandableSectionCustom('+ MORE', '- LESS', '<p>This is some expandable stuff</p>')
 
   html_content = '''\
-    <div class="expandable" onclick="show_or_hide('{expand_more}', '{expand_less}', this)">
-      <div class="expand_text">{expand_more}</div>
+    <div class="expandable">
+      <div class="expand_text" onclick="show_or_hide('{expand_more}', '{expand_less}', this)">{expand_more}</div>
       <div class="hidden">
         {expand_content}
       </div>
