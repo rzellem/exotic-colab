@@ -35,7 +35,10 @@
 #    EXOTIC COLAB: EXOplanet Transit Interpretation Code (EXOTIC) for Google Colab
 #    # NOTE: See companion file version.py for version info.
 # ########################################################################### #
-import importlib_metadata as metadata
+try:
+    from importlib import metadata  # standard library, Python 3.8+
+except ImportError:  # Python 3.7: the backport, which requirements.txt installs only there
+    import importlib_metadata as metadata
 from pathlib import Path
 import sys
 
